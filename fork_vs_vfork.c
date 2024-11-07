@@ -5,10 +5,9 @@
 #include <errno.h>
 #include <sys/types.h>
 #include <time.h>
-
 #define GB2BYTE(num) (num*1024*1024*1024)
 
-inline long get_timediff(struct timespec *start, struct timespec *end)
+long get_timediff(struct timespec *start, struct timespec *end)
 {
 	return (end->tv_nsec - start->tv_nsec) 
 			+ ((end->tv_sec - start->tv_sec) * 1E9);
